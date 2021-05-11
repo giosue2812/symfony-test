@@ -1,0 +1,18 @@
+{#Template pour le 'Notification Block'#}
+{#Utilisation d'une card pour entourer cette partie. #}
+<div class="card">
+    <div class="card-body">
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-4 pt-0">Ce bloc doit-il être validé par l'utilisateur ?</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    {#J'utilise le form pour faire appel à mon champ isValid qui me renvera un true ou false#}
+                    {{ form_widget(form.notificationBlock.isValid) }}
+                </div>
+            </div>
+        </fieldset>
+        {#Include le template pour le Content#}
+        {% include 'notify/_formNotificationBlockContent.html.twig' %}
+        <button class="btn btn-secondary" type="button">Supprimer ce bloc</button>
+    </div>
+</div>

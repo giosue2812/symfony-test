@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Résulta de la notification
+{% endblock %}
+{% block body %}
+    <div class="card">
+        <div class="card-header">Résulta de la notification</div>
+        <div class="card-body">
+            Titre : {{ result.title }}
+            Date d'activation : {{ result.activationDate|date}}<br/>
+            Valider par le destinataires : {{ result.notificationBlock.valid ? 'oui':'non' }}<br/>
+            Langue : {{ result.notificationBlock.notificationBlockContent.lang }}<br/>
+            Contenu : {{ result.notificationBlock.notificationBlockContent.text }}
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+

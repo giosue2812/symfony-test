@@ -1,0 +1,19 @@
+<div class="col">
+    {#Include le template pour la nav tab des langues#}
+    {% include 'notify/_secondaryTab.html.twig' %}
+    <div class="tab-content" id="tabContent">
+        <div class="tab-pane fade show active" id="fr" role="tabpanel">
+            {#Ici mon formulaire me renvoi quelle langue est choisie ici par defaut c'est 'Fr' Je dois trouver le moyen de
+            la passer dynamiquement de mon template appelant.
+            Une des pistes que j'ai trouvé est d'utiliser le 'with' au sein de mon appelle de template #}
+            {{ form_row(form.notificationBlock.notificationBlockContent.lang,{'attr':{'value':'fr'}}) }}
+            <label class="form-label">Contenu(s)</label>
+            {#Ici mon formulaire me renvoie le text du contenu qui a par defaut 20 lignes#}
+            {{ form_widget(form.notificationBlock.notificationBlockContent.text,{'attr':{'rows':'20'}})}}
+        </div>
+        <div class="tab-pane fade" id="nl" role="tabpanel">
+            <label class="form-label">(nl)Contenu(s)</label>
+            {#Cette partie n'est pas terminé. Elle sert pour le tab uniquement. Le but est de rendre ce template dynamique en fonction de la langue choisie. Une piste est d'utiliser le Translator de Symfony#}
+        </div>
+    </div>
+</div>
